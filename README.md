@@ -3,6 +3,8 @@
 Front matter guideline:
 
 Sample frontmatter
+        
+        
         '''
         ---
         layout: post
@@ -16,3 +18,4 @@ Sample frontmatter
         bg: "mountain.jpg"
         ---
         '''
+

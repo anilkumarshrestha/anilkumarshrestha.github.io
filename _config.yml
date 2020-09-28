@@ -20,8 +20,11 @@ disqus_username:
 # Build settings
 markdown: kramdown
 kramdown:
-   math_engine: mathjax
    syntax_highlighter: rouge
+mathjax:
+  enable: true
+  combo: "tex-svg"
+  tags: "ams"
 # As Github pages updates it dependency Jekyll to 4.0 change catagories to slugified_categories
 permalink: /:categories/:title/
 

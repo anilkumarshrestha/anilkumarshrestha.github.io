@@ -21,7 +21,7 @@ layout: default
   <div class="post-content">
 
     {{ content }}
-
+    {{page.next.url}}
     <div class="post-links">
       {% if page.previous.url %}
         <a class="link-to-post" href="{{ page.previous.url | relative_url}}">
