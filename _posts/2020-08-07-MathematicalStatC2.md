@@ -5,7 +5,7 @@ crawlertitle: "All about Optimization"
 summary: "Just a sumary about Optimization"
 date:   2020-09-28
 categories: posts
-tags: ['Mathematical statistics']
+tags: ['Mathematical Statistics']
 author: unknown
 bg: "african-penguins.jpg"
 ---
