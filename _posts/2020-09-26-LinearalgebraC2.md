@@ -3,7 +3,7 @@ layout: post
 title:  "Chapter 2: Solving Linear Equation"
 crawlertitle: "All about vectors"
 summary: "Just a sumary about vectors"
-date:   2020-09-28
+date:   2020-09-26
 categories: posts
 tags: ['Linear Algebra']
 author: unknown
