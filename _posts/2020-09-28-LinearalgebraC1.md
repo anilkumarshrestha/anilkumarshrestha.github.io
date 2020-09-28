@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Introduction to vectors"
+title:  "Chapter 1: Introduction to vectors"
 crawlertitle: "All about vectors"
 summary: "Just a sumary about vectors"
 date:   2020-09-28

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Chapter 2"
+title:  "Chapter 2: Solving Linear Equation"
 crawlertitle: "All about vectors"
 summary: "Just a sumary about vectors"
 date:   2020-09-28

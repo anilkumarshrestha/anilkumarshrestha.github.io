@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Introduction to Optimization"
+title:  "Chapter2: Optimization"
 crawlertitle: "All about Optimization"
 summary: "Just a sumary about Optimization"
 date:   2020-09-28
