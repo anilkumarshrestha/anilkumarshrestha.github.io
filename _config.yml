@@ -7,21 +7,22 @@
 
 # Site settings
 title: EKbana Study Group
-email: your-email@ekbana.com
+email: anilkumar.shrestha@ekbana.info
 description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  EKbana Study group page.
 baseurl: "" # the subpath of your site, e.g. /blog
 lang: "en"
-url: "http://localhost:4000" # the base hostname & protocol for your site
-twitter_username: jekyllrb
-github_username:  jekyll
+url: "https://github.com/anilkumarshrestha/ekbana-study-group" # the base hostname & protocol for your site
+twitter_username: ekbana
+github_username:  ekbana
 disqus_username:
 
 # Build settings
 markdown: kramdown
-permalink: /:categories/:title/
+kramdown:
+   math_engine: mathjax
+   syntax_highlighter: rouge
+permalink: /:slugified_categories/:title/
 
 # Posts settings
 future: true
@@ -42,3 +43,4 @@ sass:
 
 
 images: '/assets/images'
+search_tag: '/tags'

@@ -1,11 +1,11 @@
 ---
 bg: "tag.jpg"
 layout: page
-permalink: /posts/
-title: "Archive"
-crawlertitle: "All articles"
-summary: "Posts about jekyll"
-active: archive
+permalink: /tags/
+title: "Tags"
+crawlertitle: "Tags wise all articles"
+summary: "This page contains all articles accourding to their specified tags."
+active: tags
 ---
 
 {% for tag in site.tags %}
@@ -15,7 +15,7 @@ active: archive
   <h2 class="category-key" id="{{ t | downcase }}">{{ t | capitalize }}</h2>
 
   <ul class="year">
-    {% for post in posts %}
+    {% for post in posts reversed%}
       {% if post.tags contains t %}
         <li>
           {% if post.lastmod %}

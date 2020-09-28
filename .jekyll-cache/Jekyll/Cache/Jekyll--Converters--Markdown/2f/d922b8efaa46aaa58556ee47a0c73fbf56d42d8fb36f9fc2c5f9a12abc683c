@@ -1,0 +1,8 @@
+I"Ý<h2 id="summary--chapter-2-part-b">Summary | Chapter 2 (Part B)</h2>
+<h1 id="elimination-using-matrices">Elimination Using Matrices</h1>
+<p>The ultimate purpose of elimination is to knock out variables from other equations and hence find the solution of x in $Ax = b$.</p>
+
+<h2 id="matrices-times-vectors-and-ax--b">Matrices times Vectors and $Ax = b$</h2>
+<p>Ax = b represents both row and column form.
+$Ax = a_{i1} x_1 + .. + a_{in} x_n  =\sum\limits_{j=1}^n a_{ij}x_j $</p>
+:ET

@@ -1,0 +1,271 @@
+I"` <h2 id="summary--chapter-2-part-b">Summary | Chapter 2 (Part B)</h2>
+<h1 id="elimination-using-matrices">Elimination Using Matrices</h1>
+<p>The ultimate purpose of elimination is to knock out variables from other equations and hence find the solution of x in $Ax = b$.</p>
+
+<h2 id="matrices-times-vectors-and-ax--b">Matrices times Vectors and $Ax = b$</h2>
+<p>Ax = b represents both row and column form.
+$Ax = a_{i1} x_1 + .. + a_{in} x_n  =\sum\limits_{j=1}^n a_{ij}x_j $</p>
+
+<p>where, x = $\begin{bmatrix}
+    x_1 <br />
+    x_2 <br />
+    x_3 <br />
+    . <br />
+    . <br />
+    . 
+\end{bmatrix}$
+$A = \begin{bmatrix}
+    a_{1,1} &amp; a_{1,2} &amp; … <br />
+    . &amp;  &amp; <br />
+     . &amp; &amp; 
+\end{bmatrix}
+$</p>
+
+<h2 id="matrix-form-of-one-elimination-step">Matrix Form of One Elimination Step</h2>
+<p>Elimination matrix has the extra non-zero entry $-l$ in the $i,j$ position in an identity matrix and hence subtracts $l$ times row $j$ from row $i$. Inverse of an elimination matrix reverses the action. If $E$ multiplied by $l$ and subtracted then $E^{-1}$ multiplies and adds the rows.
+Example of elimination matrix:<br />
+$
+\begin{bmatrix}
+1 &amp; 0 &amp; 0<br />
+0 &amp; 1 &amp; 0 <br />
+-l &amp; 0 &amp; 1
+\end{bmatrix}
+$</p>
+
+<p>With this we can create 0 at any desired position in the matrix and also makes computation efficient.</p>
+
+<h1 id="matrix-multiplication">Matrix Multiplication</h1>
+
+<ul>
+  <li>Associative so $A(BC) = (AB)C$</li>
+  <li>NOT commutative so $AB \neq BA$.</li>
+  <li>Commutative $A + B = B + A$</li>
+  <li>Distributive $c(A + B) = cA + cB$</li>
+  <li>Associative $A + (B + C) = (A + B) + C$</li>
+</ul>
+
+<h2 id="matrix-p_ij-for-row-exchange">Matrix $P_{ij}$ for Row Exchange</h2>
+<p>When zero is pivot, we might have to exchange rows as zero cannot be a pivot. For this we use permutation matrix $P_{ij}$ which exchanges ith row and jth row.
+example: <br />
+$P_{ij} = \begin{bmatrix}
+                1 &amp; 0 &amp; 0<br />
+                0 &amp; 0 &amp; 1 <br />
+                0 &amp; 1 &amp; 0
+                \end{bmatrix}$
+<br />
+The above permutation matrix says: take $A_{C1}$ to $B_{C1}$; take $A_{C3}$ to $B_{C2}$ and $A_{C2}$ to $B_{C3}$</p>
+
+<h1 id="matrix-multiplication-1">Matrix multiplication</h1>
+<h2 id="first-way">First way</h2>
+<p>For a matrix multiplication AB to create C the number columns of A must equal the number of rows of B.
+<br />
+$AB = C $
+<br />
+$(m * n) (n * p) = m * p$
+<br /></p>
+
+<p>So here we get the result matrix as $m * p$.</p>
+
+<ul>
+  <li>If A and B are n * n then AB is n * n</li>
+  <li>Also each dot product needs n multiplication so computation of AB needs $n^3$ separate multiplication which is the cost of calculation of AB.</li>
+</ul>
+
+<h2 id="second-and-third-way-column-and-row-picture">Second and Third way: Column and Row picture</h2>
+<p>Column picture gives: Matrix A times (every column of B) i.e 
+<br />
+$A [b_1, b_2, … , b_p] = [Ab_1, … , Ab_p]$. 
+<br /></p>
+
+<p>Similarly Row picture Every row of A times 
+(Matrix B) i.e 
+<br />
+[row of A] . $\begin{bmatrix} 1 &amp; 2 &amp; 3 \ 4 &amp; 5 &amp; 6\7 &amp; 8 &amp; 9 \end{bmatrix}$</p>
+
+<h2 id="fourth-way-column-multiply-row">Fourth way: column multiply row</h2>
+<p>Here we multiply column 1 to n of A with 1 to n rows of B and add them.
+<br />
+$\begin{bmatrix}
+    1 &amp; 2 &amp; 3<br />
+    . &amp; . &amp; . <br />
+    . &amp; . &amp; .
+    \end{bmatrix}
+\begin{bmatrix}
+    4 &amp; . &amp; .<br />
+    5 &amp; . &amp; . <br />
+    6 &amp; . &amp; .
+    \end{bmatrix}
+    = (1<em>4) + (2</em>5) + (3*6) 
+$</p>
+
+<h2 id="block-multiplication">Block Multiplication</h2>
+
+<ul>
+  <li>Matrix can be divided into blocks which can give a better picture for complex matrices</li>
+  <li>We can use block multiplication to eliminate multiple elements with single matrix</li>
+</ul>
+
+<h1 id="inverse-matrix">Inverse Matrix</h1>
+<p>The matrix $A^{-1}$ is the inverse of A if $A^{-1}A = I$ and  $AA^{-1} = I$.</p>
+<h2 id="testing-inverse">Testing Inverse</h2>
+
+<ul>
+  <li>If matrix is diagonally dominant, it has inverse.</li>
+  <li>$A^{-1}$ exists iff elimination produces $n$ pivot points. That is no diagonal element should be zero.</li>
+  <li>Matrix A can not have two different inverse which means x = $A^{-1}B$ has one and only solution.</li>
+  <li>If $Ax = 0$, we cannot divide by 0 to create $A^{-1}$.</li>
+  <li>$A^{-1}$ exists if determinant of $A \neq 0$.</li>
+</ul>
+
+<h2 id="inverse-of-ab-and-ab">Inverse of A+B and AB</h2>
+
+<p>Even if A and B are invertible separately, it does not guarantee that $A+B$ will be invertible. For example if $A + B$ adds to $0$; no inverse exists. However, the product of A and B has inverse and takes the form: $(AB)^{-1} = B^{-1}A^{-1}$ so $(AB) (B^{-1}A^{-1}) = I$</p>
+
+<h2 id="diagonally-dominant-matrix">Diagonally Dominant Matrix</h2>
+<p>The matrices whose diagonal element is greater than the sum of it other element in a row. We can easily determine if a matrix has inverse by checking if it is diagonally dominant. Mathematically,
+<br />
+$|a_{ij}| &gt; \sum\limits_{j \neq i} |a_{ij}|$</p>
+
+<p>Example:</p>
+
+<p>\begin{bmatrix}
+    5 &amp; 1 &amp; 3<br />
+    1 &amp; 7 &amp; 3<br />
+    2 &amp; 1 &amp; 8 
+    \end{bmatrix}
+$</p>
+
+<h2 id="calculating-inverse-with-gaussian-jordan-elimination">Calculating Inverse with Gaussian Jordan Elimination</h2>
+
+<p>Here we solve all n equations together to find inverse of A. First form an augmented matrix $[A I]$, then unlike Gaussian continue elimination to reduced echelon form $R = I$ which finally converts to $[I A^{-1}]$.</p>
+
+<h1 id="factorization-alu">Factorization: A=LU</h1>
+
+<p>Here we try to eliminate without exchanging rows. L is the lower triangular matrix which is the combination of inverse of elimination matrices. U is upper triangular matrix with pivot on its diagonal.
+<br />
+$E_{21}A = U $
+<br />
+$
+\begin{bmatrix}
+    1 &amp; 0 <br />
+    -4 &amp; 1 <br />
+    \end{bmatrix}
+\begin{bmatrix}
+    2 &amp; 1 <br />
+    8 &amp; 7 <br />
+    \end{bmatrix}
+    =
+\begin{bmatrix}
+    2 &amp; 1 <br />
+    0 &amp; 3 <br />
+    \end{bmatrix}
+$
+<br />
+$
+A = L U 
+$
+<br />
+$
+\begin{bmatrix}
+2 &amp; 1 <br />
+8 &amp; 7 <br />
+\end{bmatrix}
+    =
+\begin{bmatrix}
+1 &amp; 0 <br />
+4 &amp; 1 <br />
+\end{bmatrix}
+\begin{bmatrix}
+    2 &amp; 1 <br />
+    0 &amp; 3 <br />
+\end{bmatrix}
+$
+<br />
+Here L = $E_{21}^{-1}$ . Similarly for three dimensional matrix we have $E_{32}E_{31}E_{21}A = U$ and $ L = E_{21}^{-1}E_{31}^{-1}E_{32}^{-1}$</p>
+
+<h1 id="transpose-of-a-matrix">Transpose of a Matrix</h1>
+<p>If $A_{ij}$ is a matrix then its transpose $(A^T)<em>{ij} = A</em>{ji}$<br />
+For example:
+<br />
+$A = \begin{bmatrix}
+    4 &amp; 1 &amp; 2<br />
+    5 &amp; 7 &amp; 1 <br />
+    \end{bmatrix}
+A^T= \begin{bmatrix}
+    4 &amp; 5<br />
+    1 &amp; 7<br />
+    2 &amp; 1 
+    \end{bmatrix}
+$
+<br /></p>
+
+<p>Note: $AA^T$ gives a square matrix, which can be used to find inverse of a matrix.</p>
+
+<p>$
+\begin{bmatrix}
+    1 &amp; 3<br />
+    2 &amp; 3<br />
+    4 &amp; 1 
+    \end{bmatrix}
+$
+$\begin{bmatrix}
+    1 &amp; 2 &amp; 4<br />
+    3 &amp; 3 &amp; 1
+    \end{bmatrix}
+$ 
+= $\begin{bmatrix}
+    10 &amp; 11 &amp; 7<br />
+    11 &amp; 13 &amp; 11<br />
+    7 &amp; 11 &amp; 17 
+    \end{bmatrix}
+$</p>
+
+<p>$(R^TR)^T = R^TR^{TT} = R^TR$
+Hence symmetric.</p>
+
+<h3 id="symmetric-matrix">Symmetric matrix</h3>
+<p>If a matrix A = $A^T$, then A is symmetric.</p>
+
+<h1 id="permutations">Permutations</h1>
+<p>Permutation matrices have rows of identity in any order.
+Example: Permutation matrices of 3 * 3 matrix.
+<br />
+$
+\begin{bmatrix}
+    1 &amp; &amp; <br />
+     &amp; 1 &amp; <br />
+     &amp; &amp; 1
+\end{bmatrix}
+\begin{bmatrix}
+     &amp; 1 &amp; <br />
+     1 &amp;  &amp; <br />
+     &amp; &amp; 1
+\end{bmatrix}
+\begin{bmatrix}
+     &amp; &amp; 1 <br />
+     &amp; 1 &amp; <br />
+     1&amp; &amp; 
+\end{bmatrix}
+\begin{bmatrix}
+    1 &amp; &amp; <br />
+     &amp;  &amp; 1<br />
+     &amp; 1 &amp; 
+\end{bmatrix}
+\begin{bmatrix}
+     &amp; &amp; 1<br />
+    1 &amp;  &amp; <br />
+     1 &amp; &amp; 
+\end{bmatrix}
+\begin{bmatrix}
+     &amp; &amp; 1<br />
+     1 &amp;  &amp; <br />
+     &amp; 1 &amp; 
+\end{bmatrix}
+$
+<br /></p>
+
+<ul>
+  <li>$P^{-1} = P^T$</li>
+  <li>for $n*n$ matrix there are $n!$ permutations.</li>
+</ul>
+:ET
